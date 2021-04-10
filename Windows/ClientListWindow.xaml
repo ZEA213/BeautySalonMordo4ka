@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:BeautySalonMordo4ka.Windows"
         mc:Ignorable="d" Icon="/Resources/beauty_logo.ico"        
         Title="Салон красоты ''Мордочка''  -  Список клиентов"
-        Height="600" Width="800" WindowStartupLocation="CenterScreen"
-        MinHeight="600" MinWidth="800">
+        Height="800" Width="1200" WindowStartupLocation="CenterScreen"
+        MinHeight="800" MinWidth="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -41,5 +41,23 @@
         <TextBlock Grid.Row="1" Text="Список клиентов" Margin="20,0"
                    VerticalAlignment="Center" HorizontalAlignment="Left"
                    FontFamily="Tahoma" FontSize="18"/>
+
+        <ListView Name="LVClients" Grid.Row="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patronymic}"/>
+                    <GridViewColumn Header="Пол" DisplayMemberBinding="{Binding GenderName}"/>
+                    <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding Birthday, StringFormat={}dd.MM.yyyy}"/>
+                    <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Header="Электронная почта" DisplayMemberBinding="{Binding Email}"/>
+                    <GridViewColumn Header="Дата добавления" DisplayMemberBinding="{Binding RegistrationDate, StringFormat={}dd.MM.yyyy}"/>
+                    <GridViewColumn Header="Дата последнего посещения" DisplayMemberBinding="{Binding VisitMAX, StringFormat={}dd.MM.yyyy HH:mm}"/>
+                    <GridViewColumn Header="Количество посещений" DisplayMemberBinding="{Binding VisitQTY}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

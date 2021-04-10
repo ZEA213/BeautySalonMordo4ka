@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static BeautySalonMordo4ka.EF.AppData;
 
 namespace BeautySalonMordo4ka.Windows
 {
@@ -22,6 +23,7 @@ namespace BeautySalonMordo4ka.Windows
         public ClientListWindow()
         {
             InitializeComponent();
+            LVClients.ItemsSource = Context.View_Client.OrderBy(i => i.ID).ToList();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
